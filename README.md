@@ -1,5 +1,4 @@
-C:\Program Files\Python311
-pc- ALL Python file save 
+
 
 1. What is Python?
 ans:- Python is a interpreted, object-oriented, high-level programmin language with dynamic semantics.
