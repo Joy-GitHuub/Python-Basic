@@ -306,6 +306,28 @@ c = bytearray(mylist2);
 c[0] = 11;
 ```
 
+### None Type
+```py
+"""  
+** Python None Keyword
+- The none keyword is used to define a null value, or no value at all. none is not the same as 0, False, or an empty string. None is a data type of ites own (NoneType) and only None can be None.
+"""
+# Declear a None variable
+x = None;
+print(x);
+
+# Type check
+print(type(x)) #<class 'NoneType'>
+
+
+if x:
+    print("Do You think None is True")
+elif x is False:
+    print("Do You think None is False")
+else:
+    print("None is not True, or False, None is Just None....");
+```
+
 ### Type Casting
 ```py
 
@@ -385,6 +407,80 @@ print(type(num));
 print(type(isPass));
 ```
 
+### Python Operators
+```py
+""" 
+** Python Operators
+- Python Math Operators
+- Python Assignment Operators
+- Python Comparison Operators
+- Python Logical Operators
+- Python Identity Operators
+- Python Membership Operators
+"""
+
+# Python Arithmetic Operators
+print(10 + 20);
+print(20 - 10);
+print(10 * 2);
+print(20 / 5);
+print(20 % 3);
+print(10 ** 2);
+print(100 // 3);
+
+#  Python Assignment Operators
+x = 5;
+x += 10;
+x -= 10;
+x *= 2;
+x **= 2;
+x /= 5;
+x %= 3;
+y = 3;
+y &= 3;
+y |= 3;
+y ^= 3
+y >>= 3
+y <<= 3
+
+# Python Comparison Operators
+a = 5;
+b = 10;
+print(a == b);
+print(a != b);
+print(a < b);
+print(a > b);
+print(a >= b);
+print(a <= b);
+
+# Python Logical Operators
+# and operator Returns True if both statements are true
+# or operator Returns True if one of statements is true
+# Not operator Returns Reverse the result,
+
+
+p = 10;
+q = 11;
+m = 20;
+n = 25;
+print(p > q and m < n )
+print(p > q or m < n )
+print(not(p > q and m < n))
+print(not(p > q or m < n));
+
+# Python Identity Operators
+i = 22;
+l = 22;
+print(i is l); # True
+print(i is  not l); # False
+
+# Python Membership Operators
+arr = ["a", "b", "c"];
+print("a" in arr); # True
+print("a" not in arr) # False
+print("d" not in arr) # True
+```
+
 ### Python Logical Operators
 ```py
 - and Returns True if both statements are true.
@@ -423,6 +519,22 @@ if not 11 % 2 == 0:
     print("not zero");
 else:
     print("00");
+```
+
+### Python Swap Variable
+```py
+# variable Swap
+a = 10;
+b = 20;
+print(a,b);
+a,b = b,a;
+print(a,b);
+
+mylist1 = [1,2,3];
+mylist2 = [4,5,6];
+print(mylist1, mylist2);
+mylist1,mylist2 = mylist2,mylist1 
+print(mylist1, mylist2);
 ```
 
 ### If, Else Statement
@@ -1050,6 +1162,7 @@ print(thisdict)
 del thisdict;
 # print(thisdict) #NameError: name 'thisdict' is not defined   
 ```
+
 ### Python Dictionary Loop
 ```py
 thisdict = {
