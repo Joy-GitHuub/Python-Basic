@@ -784,6 +784,23 @@ print(thislist)
 
 ```
 
+### Python List All Method
+```py
+
+** Python List Methods
+- append() 
+- clear()
+- copy()
+- count()
+- extend()
+- index()
+- insert()
+- pop()
+- remove()
+- reverse()
+- sort()
+```
+
 
 ### Python List Oparation
 ```py
@@ -822,7 +839,7 @@ print(x) # result => 3
 ```
 
 
-### Python Add Items
+### Python List Add
 ```py
 # Append Items
 # just single one append one time.
@@ -1005,6 +1022,7 @@ print(x);
 print(y);
 
 ```
+
 
 ### Python Range Function
 ```py
