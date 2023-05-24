@@ -1549,28 +1549,147 @@ print(bank)
 ## Python Function
 ```py
 """ 
-** Python Function
-- In Python a function is defined useing the def keyword
-- To call a function, use the function name
-- Information can be passed into functions as arguments.
-- The terms parameter and argument can be used for the same thing: information that are passed into a function.
-- If we call the function wtihout argument, it uses the default value.
+** Python Functions
+- A function is a block of code which only runs when it is called.
+- You can pass data, known as parameters, into a function
+- A function can retun data as a result.
+
+* parameters or Arguments?
+- The terms parameter and argument can be used for the same thing.
 """
 
 # Create a Function
-def sum(a,b) :
-    return a + b;
+def my_function():
+    print("Hello from a function");
+# Call a Function
+my_function();
 
-a = sum(10, 20);
-b = sum(20, 5);
-print(a,b);
+# Arguments pass
+def my_name(name):
+    print(name);
+# call function with argumetns
+my_name("Joy");
 
+# This function expects 2 arguments, and gets 2 arguments:
+def my_info(fname, lname):
+  print(fname + " " + lname)
+my_info("Emil", "Refsnes")
+
+# sum two number using a function
+def math_sum(num1,num2):
+   print(num1 + num2);
+math_sum(10, 5);
+
+
+```
+
+## Python Function More Concepts
+```py
+""" 
+** Arbitrary Arguments, *args
+- If you do not know how many arguments that will be passed into your function, add a * before the paramenter name in the function definition.
+- This way the function will recive a tuple of arguments, can access the items accordingly.
+
+** Keyword Arguments
+- You can also send arguments with the key = value syntax.
+- This way the order of the arguments does not matter.
+
+** Default Parameter Value
+- If we call the function without argument, it uses the default value.
+
+** Return values
+- To let a function return value, use the return statement.
+
+** The pass Statement
+- function definitions cannot be empyt, but if you for some reson have a function definition with no content, put in the pass statement to avoid, getting an error.
+"""
+
+# Arbitrary Arguments, *args
+def my_fun(*kids):
+    print(kids[1]);
+
+my_fun("emil", "anis", "sumit");
+
+
+def my_function(child1, child2, child3):
+    print(child1, child2, child3);
+my_function(child1="X", child2="Y", child3="Z");
+
+
+# Default Parameter Value
+# If we call the function without argument, it uses the default value.
 def my_function(country = "Norway"):
   print("I am from " + country)
+
 my_function("Sweden")
 my_function("India")
 my_function()
 my_function("Brazil")
+
+
+# Passing a List as an Argument
+def my_sum(numbers):
+   sum = 0
+   for x in numbers:
+      sum += x;
+   print(sum);
+my_sum([10, 20, 30]);
+
+# Return values
+# - To let a function return value, use the return statement.
+def multiply(num):
+   return num * 2;
+x = multiply(5);
+y = multiply(4);
+z = multiply(6);
+
+# The pass Statement
+# - function definitions cannot be empyt, but if you for some reson have a function definition with no content, put in the pass statement to avoid, getting an error.
+def pass_fun():
+   pass;
+
+
+# Zip Function
+# Join Two Tuples together
+a = ("John", "Charles", "Mike")
+b = ("Jenny", "Christy", "Monica", "Vicky")
+x = zip(a,b);
+
+list1 = ["Joy", "Sumit", "Anis"];
+list2 = ["programmer", "CEO", "Teacher"];
+y = list(zip(list1, list2));
 ```
 
-## 
+## Python Lambda and Recursion Function
+```py
+# Python Lambda Function
+""" 
+- A lambda function is a small anonymous function
+- A lambda function can take any number of arguments, can can only have one expression.
+
+Why Use Lambda Functions?
+- The power of lambda is better shown when you use them as an anonymous function inside another function.
+- Say you have a function definition that takes one argument, and that argument will be multiplied with an unknown number
+"""
+# anonymous function
+p = lambda x, b : x + b;
+q = p(10, 20);
+print(q);
+
+# function return another lambda fuction
+def myfunc(n):
+  return lambda a = 2 : a * n;
+x = myfunc(5);
+print(x())
+print(x(10))
+
+# Recursion
+def recursion(num):
+    if (num > 0):
+        result = num + recursion(num - 1)
+        print(result);
+    else:
+        result = 0;
+    return result;
+x = recursion(6)
+```
