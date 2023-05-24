@@ -1370,69 +1370,123 @@ print(i)
 
 ## Python Set
 ```py
-""" 
+"""
 ** Python Sets
 - Sets are used to store multiple items in a single variable.
 - Set items are unchangeable, and do not allow duplicate values.
 - Once a set is created, you cannot change its items, but you can add new items.
+- Set are unordered,
+- Unordered means that the items in a set do not have a defined order.
+- Sets are written with curly brackets.
+- Sets are unordered, so you cannot be sure in which order the items will appear.
+- To add one item to a set use the add() method.
+- To add items from another set into the current set, use the update() method
+- To remove an item in a set, use the remove(), or the discard() method.
+- Remove a random item by using the pop() method
+- The union() method returns a new set with all items from both sets
 """
+
 # Create a Set
-thisset = {"X", "Y", "Z"};
-
-# Set Type
-typeset = type(thisset); #<class 'set'>
-
-# Duplicates Not Allowed
-# True and 1 is considered the same value:
-duplicateset = {"apple", "banana", "cherry", "apple"}
-thisset = {"apple", "banana", "cherry", True, 1, 2}
-
-# Get the lenght of a Set
-length = len(thisset);
+myset = {"A", "C", "B"}; #{'A', 'B', 'C'}
 
 # Create set() Constructor
-cre = set(("A", "C", "B", "D"));
+thisset = set(("apple", "banana", "cherry")) # note the double round-brackets
 
-# Loop through the  set
-for x in cre:
+# Duplicates Not Allowed
+dup = {"a", "c", "d", "a", "a", "b", "f", "k", "g", }; # duplicate a allow just 1 time.
+
+# Set Length Check
+length = len(dup);
+
+# The values True and 1 are considered the same value in sets, and are treated as duplicates:
+thisset = {"apple", "banana", "cherry", True, 1, 2, 0, False, "",}
+
+# Set Data Types
+set1 = {"apple", "banana", "cherry"};
+set2 = {1, 5, 7, 9, 3};
+set3 = {True, False, False};
+
+# copy() method
+thisset = {"apple", "banana", "cherry"};
+my = thisset.copy();
+
+# Loop Through in a Set
+for x in set1:
     print(x);
 
-# If statement in set
-if "B" in cre:
-    print("Yes");
+# If Statement Check
+thisset = {"apple", "banana", "cherry"};
+if "banana" in thisset:
+    print("Yes")
 
-# Add new Items
-cre.add("J");
+# Add Item in a Set
+# add() method recived 1 argument.
+thisset =  {"apple", "banana", "cherry"};
+thisset.add("orange",);
 
-# Remove Items
-# If the item to remove does not exist, remove() will raise an error.
-cre.remove("C");
+# Update Method use add Set in a Set 
+firstset = {"apple", "banana", "cherry"};
+secondset = {"pineapple", "mango", "papaya"};
+firstset.update(secondset);
 
-# discard() method
-# If the item to remove does not exist, discard() will NOT raise an error.
+# Add Any Iterable
+a =  {"apple", "banana", "cherry"};
+b = ("kiwi", "orange");
+c = ['potato'];
+a.update(b, c);
+
+# Remove Set Items
 thisset = {"apple", "banana", "cherry"}
-thisset.discard("banana")
+thisset.remove("banana") # If the item to remove does not exist, remove() will raise an error.
 
-# Remove a random item by using the pop() method:
-thisset = {"apple", "banana", "cherry", "kiwi"}
+# remove item using discard
+thisset = {"apple", "banana", "cherry"}
+thisset.discard("bananaa") # If the item to remove does not exist, discard() will NOT raise an error.
+
+# random item pop
+thisset = {"apple", "banana", "cherry"}
 x = thisset.pop()
 
-# The clear() method empties the set:
-thisset.clear();
+# Clear Method empty the set
+thisset = {"apple", "banana", "cherry"}
+thisset.clear()
 
-# The del keyword will delete the set completely
+# del keyword will delete the set completely
 thisset = {"apple", "banana", "cherry"}
 del thisset
 
-# Update() method use for two set Join
+# random item changing tricky
 thisset = {"apple", "banana", "cherry"}
-tropical = {"pineapple", "mango", "papaya"}
-thisset.update(tropical)
+x = list(thisset);
+x[0] = "kiwi";
+thisset = set(x);
 
-# update() method use for set and list join
-thisset = {"apple", "banana", "cherry"}
-mylist = ["kiwi", "orange"]
-thisset.update(mylist);
+# Join Sets 
+set1 = {"a", "b" , "c",};
+set2 = {1, 2, 3};
+set3 = set1.union(set2);
+
+# Keep only the Duplicates
+x = {"apple", "banana", "cherry"}
+y = {"google", "microsoft", "apple", "cherry"}
+x.intersection_update(y)
+print(x);
+
+** Set All Method
+- add()
+- clear()
+- copy()
+- difference()
+- difference_update()
+- discard()
+- intersection()
+- intersection_update()
+- isdisjoint()
+- issubset()
+- pop()
+- remove()
+- union()
+- update()
 ```
 
 ## Stack And Queue
