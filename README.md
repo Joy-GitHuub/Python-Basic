@@ -66,6 +66,35 @@ print("At the age of ", age, " He has started to learn Python");
 print(name, " has scored ", cgpa, " in his final exam")
 ```
 
+### Python Data Type
+```py
+1. Text Type: str,
+2. Numeric Types: int, float, complex,
+3. Sequence Types: list, tuple, range,
+4. Mapping Type: dict,
+5. Set Types: set, frozenset,
+6. Boolean Type: bool,
+7. Binary Types: bytes, bytearray, memoryview,
+8. None Type: NoneType,
+
+x = "Hello World"; # str
+x = 20; # int
+x = 20.5 # float,
+x = 1j; #complex
+x = ["apple", "banana", "cherry"]; # list
+x = ("apple", "banana", "cherry"); # tuple
+x = range(5); # range
+x = {"name": "X", "age": 11, "isPass": False}; # dict
+x = {"apple", "banana", "cherry"}; # set
+x = frozenset({"apple", "banana"}); # frozenset
+x = True # bool
+x = b"hello"; # bytes
+x = bytearray(4); # bytearray
+x = memoryview(bytes(5)); # memoryview
+x = None; # NoneType
+```
+
+
 
 ### Numerical Operation
 * Python Arithmetic Operators
@@ -111,34 +140,171 @@ print(x <= y); # Greater than or equal to
 print(x>= y); # Less than or equal to
 ```
 
-### Python Data Type
-```py
-1. Text Type: str,
-2. Numeric Types: int, float, complex,
-3. Sequence Types: list, tuple, range,
-4. Mapping Type: dict,
-5. Set Types: set, frozenset,
-6. Boolean Type: bool,
-7. Binary Types: bytes, bytearray, memoryview,
-8. None Type: NoneType,
 
-x = "Hello World"; # str
-x = 20; # int
-x = 20.5 # float,
-x = 1j; #complex
-x = ["apple", "banana", "cherry"]; # list
-x = ("apple", "banana", "cherry"); # tuple
-x = range(5); # range
-x = {"name": "X", "age": 11, "isPass": False}; # dict
-x = {"apple", "banana", "cherry"}; # set
-x = frozenset({"apple", "banana"}); # frozenset
-x = True # bool
-x = b"hello"; # bytes
-x = bytearray(4); # bytearray
-x = memoryview(bytes(5)); # memoryview
-x = None; # NoneType
+
+### Python String
+```py
+"""
+- String are arrays
+- Like many other propular programming languages, strings in Python are arrays of bytes representing unicode characters.
+** Strings in python are surrounded by either single quotation marks, or double quotation marks.
+** String length
+
+"""
+# String print
+print("Hello")
+
+# Assign String to a Variable
+a = "Hello";
+print(a)
+
+# three double quotes:
+a = """Lorem ipsum dolor sit amet,
+consectetur adipiscing elit,
+sed do eiusmod tempor incididunt
+ut labore et dolore magna aliqua."""
+# three single quotes:
+b = '''Lorem ipsum dolor sit amet,
+consectetur adipiscing elit,
+sed do eiusmod tempor incididunt
+ut labore et dolore magna aliqua.'''
+print(a)
+
+# String Lenght
+a = "Hello, World!"
+print(len(a))
+
+#  Check String
+txt = "The best things in life are free!"
+print("frees" in txt)
+
+# if state useing in a string
+txt = "The best things in life are free!"
+if "free" in txt:
+  print("Yes, 'free' is present.")
+
+# looping throught a string
+string = "bangla";
+for x in string:
+    print(x);
 ```
 
+
+### Python String Method
+```py
+# Specify the start index and the end index, separated by a colon, to return a part of the string.
+string = "bangla";
+slices = string[0:3];
+print(slices)
+slices = string[3:];
+print(slices)
+
+
+# String - Modify Case 
+
+# - String Case
+string = "bANgla";
+stringUpperCase = string.upper();
+stringLowerCase = string.lower();
+
+# - Remove Whitespace
+a = " Hello, World! ";
+b = a.strip();
+print(a)
+print(b);
+
+# - Replace String
+#  The replace() method replaces a string with another string
+a = "Joy Bose";
+b = a.replace("o", "O")
+print(b);
+
+# - The split() method returns a list wwhere the text between the specified separator becomes the list items.
+a = "Hello World";
+b = a.split(" ");
+print(b);
+```
+
+### String Format() Method
+```py
+""" 
+** String format() method
+"""
+num1= 20;
+num2= 30;
+print(f"This is my super number num1 + num2 = {num1 + num2}");
+
+userName = "Joy";
+print(f"My name is {userName}");
+```
+
+### Python Booleans
+```py
+""" 
+** Boolean Data Types
+- In programming you often need to know if an expression is True or False.
+- You can evaluate any expression in Python, and get one of two answers, True or False.
+
+** True Values
+-. True, 0, -1, 1, "Hello"
+
+** False Values
+- False, None, 0, '''', (), [], {}
+"""
+
+# True or False Return
+print(10>9);
+print(10 == 9);
+print(10<9);
+
+
+# True Values
+print(bool("Hello"));
+print(bool(1));
+print(bool(-1));
+print(bool("A"));
+print(bool({"id": 1}));
+print(bool([1,2]))
+
+# False Values
+print(bool(False))
+print(bool(None))
+print(bool(0))
+print(bool(""))
+print(bool(()))
+print(bool([]))
+print(bool({}))
+```
+
+### Binary Types
+```py
+""" 
+** Binary Types
+- bytes 
+- bytearray
+- memoryview
+
+* bytes
+=> The bytes() function returns a bytes object. It can convert objects into bytes objects, or create empty bytes object of the specified size. bytes is a inmutable.
+
+* bytearray
+=> The bytearray type is a mutable sequence of integers in the range between 0 and 255.
+
+"""
+
+# must me 0 to 255
+mylist = [1,2,3,4,5,6,7,100, 122, 255];
+b = bytes(mylist);
+# print(type(b)); # Type <class 'bytes'>
+# print(b[8])
+
+
+# Bytearray
+mylist2 = [23, 42, 54, 76, 24, 27, 22, 75, 77];
+c = bytearray(mylist2);
+# print(type(c)); # <class 'bytearray'>
+c[0] = 11;
+```
 
 ### Type Casting
 ```py
@@ -780,89 +946,6 @@ for x in range(1, 6):
         print("Sorry random number is big")
 ```
 
-### Python String
-```py
-"""
-- String are arrays
-- Like many other propular programming languages, strings in Python are arrays of bytes representing unicode characters.
-** Strings in python are surrounded by either single quotation marks, or double quotation marks.
-** String length
-
-"""
-# String print
-print("Hello")
-
-# Assign String to a Variable
-a = "Hello";
-print(a)
-
-# three double quotes:
-a = """Lorem ipsum dolor sit amet,
-consectetur adipiscing elit,
-sed do eiusmod tempor incididunt
-ut labore et dolore magna aliqua."""
-# three single quotes:
-b = '''Lorem ipsum dolor sit amet,
-consectetur adipiscing elit,
-sed do eiusmod tempor incididunt
-ut labore et dolore magna aliqua.'''
-print(a)
-
-# String Lenght
-a = "Hello, World!"
-print(len(a))
-
-#  Check String
-txt = "The best things in life are free!"
-print("frees" in txt)
-
-# if state useing in a string
-txt = "The best things in life are free!"
-if "free" in txt:
-  print("Yes, 'free' is present.")
-
-# looping throught a string
-string = "bangla";
-for x in string:
-    print(x);
-```
-
-
-### Python String Method
-```py
-# Specify the start index and the end index, separated by a colon, to return a part of the string.
-string = "bangla";
-slices = string[0:3];
-print(slices)
-slices = string[3:];
-print(slices)
-
-
-# String - Modify Case 
-
-# - String Case
-string = "bANgla";
-stringUpperCase = string.upper();
-stringLowerCase = string.lower();
-
-# - Remove Whitespace
-a = " Hello, World! ";
-b = a.strip();
-print(a)
-print(b);
-
-# - Replace String
-#  The replace() method replaces a string with another string
-a = "Joy Bose";
-b = a.replace("o", "O")
-print(b);
-
-# - The split() method returns a list wwhere the text between the specified separator becomes the list items.
-a = "Hello World";
-b = a.split(" ");
-print(b);
-```
-
 ### Python Dictionaries
 ```py
 """ 
@@ -1281,3 +1364,5 @@ my_function("India")
 my_function()
 my_function("Brazil")
 ```
+
+### 
