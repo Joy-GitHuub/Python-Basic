@@ -1088,11 +1088,25 @@ for x in range(1, 6):
 ```py
 """ 
 ** Python Dictionaris
-- Dictionaries are used to store data values in key:value pair
+- Dictionaries are used to store data values in key:value pairs.
 - A dictionary is a collection which is ordered*, changeable and do not allow duplicates.
-- duplicates Not Allowed
-- Dictionaries cannot have two items with the same key
+- Dictionaries are written with curly brackets, and have keys and values.
+- the items have a defined order, and that order will not change.
+- Dictionaries are changeable, meaning that we can change, add or remove items after the dictionary has been created.
+- Dictionaries cannot have two items with the same key.
+- The update() method will update the dictionary with the items from the given argument.The argument must be a dictionary, or an iterable object with key:value pairs.
 """
+** Python Dictionary Method
+- clear()
+- copy()
+- get()
+- items()
+- keys()
+- pop()
+- popitem()
+- update()
+- values()
+
 #  Declear a Dictionarie
 thisdict = {
     "brand" : "Ford",
@@ -1116,8 +1130,15 @@ print(type (thisdict)); # <class 'dict'>
 # Create a dict
 person = dict(name = "Joy", age = 20, country = "bangladesh");
 print(person);
-```
 
+# Duplicate Not Allow
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964,
+  "year": 2020
+}
+```
 
 ## Python Dictionary Access Method
 ```py
@@ -1461,7 +1482,8 @@ x = list(thisset);
 x[0] = "kiwi";
 thisset = set(x);
 
-# Join Sets 
+# Join Sets
+# union() method retrun value.
 set1 = {"a", "b" , "c",};
 set2 = {1, 2, 3};
 set3 = set1.union(set2);
