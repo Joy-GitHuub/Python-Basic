@@ -14,12 +14,12 @@ Ans:- Python is used in everything from machine learning to building websites an
 4. Python for Multi-purpose usage?
 Ans:- a.{Webapp development} b.{Quick prototyping} c.{Scripting} d.{Data science} e.{Databse programming}
 
-### Python Print
+## Python Print
 ```py
 1. print("Hello Python World");
 ```
 
-### Python Comment
+## Python Comment
 ```py
 # Python Single line Comment
 
@@ -28,7 +28,7 @@ Ans:- a.{Webapp development} b.{Quick prototyping} c.{Scripting} d.{Data science
  """
 ```
 
-### Python multiple line print
+## Python multiple line print
 ```py
 * Python Backslash character / Escape Sequences
 print("Joy Bose \n0177777777");
@@ -52,7 +52,7 @@ print(x);
 - \xhh => Hex Value
 ```
 
-### Python Variable
+## Python Variable
 
 ```py
 # Python Variable
@@ -66,7 +66,7 @@ print("At the age of ", age, " He has started to learn Python");
 print(name, " has scored ", cgpa, " in his final exam")
 ```
 
-### Python Data Type
+## Python Data Type
 ```py
 1. Text Type: str,
 2. Numeric Types: int, float, complex,
@@ -96,7 +96,7 @@ x = None; # NoneType
 
 
 
-### Numerical Operation
+## Numerical Operation
 * Python Arithmetic Operators
 ```py
 - Python Arithmetic Operators
@@ -142,7 +142,7 @@ print(x>= y); # Less than or equal to
 
 
 
-### Python String
+## Python String
 ```py
 """
 - String are arrays
@@ -190,7 +190,7 @@ for x in string:
 ```
 
 
-### Python String Method
+## Python String Method
 ```py
 # Specify the start index and the end index, separated by a colon, to return a part of the string.
 string = "bangla";
@@ -225,7 +225,7 @@ b = a.split(" ");
 print(b);
 ```
 
-### String Format() Method
+## String Format() Method
 ```py
 """ 
 ** String format() method
@@ -238,7 +238,7 @@ userName = "Joy";
 print(f"My name is {userName}");
 ```
 
-### Python Booleans
+## Python Booleans
 ```py
 """ 
 ** Boolean Data Types
@@ -276,7 +276,7 @@ print(bool([]))
 print(bool({}))
 ```
 
-### Binary Types
+## Binary Types
 ```py
 """ 
 ** Binary Types
@@ -306,7 +306,7 @@ c = bytearray(mylist2);
 c[0] = 11;
 ```
 
-### None Type
+## None Type
 ```py
 """  
 ** Python None Keyword
@@ -328,7 +328,7 @@ else:
     print("None is not True, or False, None is Just None....");
 ```
 
-### Type Casting
+## Type Casting
 ```py
 
 - [Integers]:-
@@ -373,7 +373,7 @@ area = 0.5 * base * hight;
 print(area)
 ```
 
-### Python Math
+## Python Math
 ```py
 """ 
 Math Function
@@ -396,7 +396,7 @@ z = math.floor(3.56); # 3
 p = math.pi # 3.141592653589793
 ```
 
-### Variable Type Check
+## Variable Type Check
 ```py
 # Type Function
 num = 29.5;
@@ -407,7 +407,7 @@ print(type(num));
 print(type(isPass));
 ```
 
-### Python Operators
+## Python Operators
 ```py
 """ 
 ** Python Operators
@@ -481,7 +481,7 @@ print("a" not in arr) # False
 print("d" not in arr) # True
 ```
 
-### Python Logical Operators
+## Python Logical Operators
 ```py
 - and Returns True if both statements are true.
 - or Returns True if one of the statements is true.
@@ -521,7 +521,7 @@ else:
     print("00");
 ```
 
-### Python Swap Variable
+## Python Swap Variable
 ```py
 # variable Swap
 a = 10;
@@ -537,7 +537,7 @@ mylist1,mylist2 = mylist2,mylist1
 print(mylist1, mylist2);
 ```
 
-### If, Else Statement
+## If, Else Statement
 ```py
 ** Python Conditions and If Statements
 - Equals: a == b
@@ -589,7 +589,7 @@ else:
     print("Z is bigger number");
 ```
 
-### Ternary Operator
+## Ternary Operator
 ```py
 - Short Hand if else
 a = 10
@@ -620,7 +620,7 @@ if not a > b:
   print("a is NOT greater than b")
 ```
 
-### Letter Grade Program
+## Letter Grade Program
 ```py
 marks = int(input("Enter Your Marks = "));
 if marks >= 80 and marks <= 100:
@@ -639,7 +639,7 @@ else:
     print("Sorry Fail....");
 ```
 
-### Python Loop
+## Python Loop
 - Python has two primitive loop commands:
     - while Loop
     - for loop
@@ -735,7 +735,7 @@ for x in color:
 ```
 
 
-### Break and Continue in Loop
+## Break and Continue in Loop
 ```py
 # break and continue
 
@@ -757,7 +757,7 @@ while i <10:
 ```
 
 
-### Python List
+## Python List
 ```py
 # Python List 
 programLanguage = ["C","C++", "JAVA", "Python", "JavaScript", "Swift", "PHP", "Ruby"];
@@ -784,7 +784,7 @@ print(thislist)
 
 ```
 
-### Python List All Method
+## Python List All Method
 ```py
 
 ** Python List Methods
@@ -802,7 +802,7 @@ print(thislist)
 ```
 
 
-### Python List Oparation
+## Python List Oparation
 ```py
 # Python List 
 
@@ -839,7 +839,7 @@ print(x) # result => 3
 ```
 
 
-### Python List Add
+## Python List Add
 ```py
 # Append Items
 # just single one append one time.
@@ -863,7 +863,7 @@ name.extend(name2);
 print(name)
 ```
 
-### Python Remove List
+## Python Remove List
 ```py
 
 """ 
@@ -917,7 +917,7 @@ print(programLanguage)
 ```
 
 
-### Python List-Loops
+## Python List-Loops
 ```py
 # Python List Loops
 programLanguage = ["C","C++", "JAVA", "Python", "JavaScript", "Swift", "PHP", "Ruby"];
@@ -940,7 +940,7 @@ for i in range(len(thislist)):
   print(thislist[i])
 ```
 
-### List More Method
+## List More Method
 ```py
 """
 ** List Sort Method 
@@ -1024,7 +1024,7 @@ print(y);
 ```
 
 
-### Python Range Function
+## Python Range Function
 ```py
 """ 
 ** Python range() function
@@ -1045,7 +1045,7 @@ for x in num:
     print(x); 
 ```
 
-### Python Problem Slove
+## Python Problem Slove
 ```py
 """ 
 ** Math Series Using Python
@@ -1076,7 +1076,7 @@ for x in range(1, 6):
         print("Sorry random number is big")
 ```
 
-### Python Dictionaries
+## Python Dictionaries
 ```py
 """ 
 ** Python Dictionaris
@@ -1111,7 +1111,7 @@ print(person);
 ```
 
 
-### Python Dictionary Access Method
+## Python Dictionary Access Method
 ```py
 thisdict = {
     "brand" : "Ford",
@@ -1140,7 +1140,7 @@ if "year" in thisdict:
 ```
 
 
-### Python Dictionary add change remove Method
+## Python Dictionary add change remove Method
 ```py
 thisdict = {
     "brand" : "Ford",
@@ -1181,7 +1181,7 @@ del thisdict;
 # print(thisdict) #NameError: name 'thisdict' is not defined   
 ```
 
-### Python Dictionary Loop
+## Python Dictionary Loop
 ```py
 thisdict = {
     "brand" : "Ford",
@@ -1208,7 +1208,7 @@ for x, y in thisdict.items():
 ```
 
 
-### Python Dictionary Other Method
+## Python Dictionary Other Method
 ```py
 # Nested Dictionaries
 myfamily = {
@@ -1252,7 +1252,7 @@ print(name)
 
 ``` 
 
-### Python Tuple
+## Python Tuple
 ```py
 # Tuple Declear
 """ 
@@ -1367,7 +1367,7 @@ x = thistuple.index(8)
 print(x)
 ```
 
-### Python Set
+## Python Set
 ```py
 """ 
 ** Python Sets
@@ -1434,7 +1434,7 @@ mylist = ["kiwi", "orange"]
 thisset.update(mylist);
 ```
 
-### Stack And Queue
+## Stack And Queue
 ```py
 """ 
 Stack And Queue
@@ -1469,7 +1469,7 @@ bank.popleft();
 print(bank)
 ```
 
-### Python Function
+## Python Function
 ```py
 """ 
 ** Python Function
@@ -1496,4 +1496,4 @@ my_function()
 my_function("Brazil")
 ```
 
-### 
+## 
