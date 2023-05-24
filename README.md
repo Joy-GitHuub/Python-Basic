@@ -1,5 +1,3 @@
-
-
 1. What is Python?
 ans:- Python is a interpreted, object-oriented, high-level programmin language with dynamic semantics.
 
@@ -848,6 +846,11 @@ thislist = ["apple", "banana", "cherry", "orange"];
 thislist.append("kiwi");
 print(thislist);
 
+# Multiple Items Add in a List
+fruits = ["apple","charry","orange"]
+fruits.extend(("banana","guava","rasbarrry"))
+print(fruits)
+
 
 # Insert Items with out any replace element.
 # insert expected 2 arguments, 1-index no, 2-item
@@ -995,6 +998,11 @@ list1 = ["a", "b" , "c"]
 list2 = [1, 2, 3]
 list1.extend(list2)
 print(list1)
+
+# use extend() method multiple items add in a List
+fruits = ["apple","charry","orange"]
+fruits.extend(("banana","guava","rasbarrry"))
+print(fruits); 
 
 # Another wat to join two lists is by appending all the items from list2 into list1 one by one.
 list1 = ["a", "b" , "c"]
@@ -1254,29 +1262,38 @@ print(name)
 
 ## Python Tuple
 ```py
-# Tuple Declear
-""" 
-** Tuple Declear
+"""
+** Python Tuples
 - Tuples are used to store multiple items in a single variable.
-- A tuple is a collection which is ordered and unchangeable.
-- Tuple items are ordered, unchangebale, and allow duplicate values.
-
+- Tuple items are ordered, unchangeable, and allow duplicate values.
+-Tuple items are indexed, the first item has index [0], the second item has index [1] etc.
 """
 
-# Create Tuple
-name = (
-    "Joy", "Anisul", "Rabeya", "Nishat", "Sumit", "Nahim",
-);
+# Create a Tuple
+mytuple = ("apple", "banana", "cherry");
 
-# Allow duplicates values
-thistuple = ("apple", "banana", "cherry", "apple", "cherry")
+# Create a tuple() Constructor
+mytuple2 = tuple(("apple", "banana", "cherry"))
 
 # Tuple Length
-length = len(thistuple);
+lenght = len(mytuple);
 
-# Create Tuple with one Item
-oneitem = ("apple");
-print(type (oneitem)) # Type not a typle this type is str
+# Create Tuple With One Item
+oneitem = ("apple",)
+nottuple = ("apple") # not tuple
+
+# Tuple Type
+typetuple = type(mytuple);
+
+# Access Tuple
+thistuple = mytuple[0];
+thistuple2 = mytuple[-2]; #banana
+
+# Range of Index
+mytuple3 = ("apple", "banana", "cherry", "orange", "kiwi", "melon", "mango")
+x = mytuple3[4:];
+y = mytuple3[:4];
+z = mytuple3[2:4];
 
 #  Tuple Items - Data Types
 tuple1 = ("apple", "banana", "cherry")
@@ -1284,87 +1301,71 @@ tuple2 = (1, 5, 7, 9, 3)
 tuple3 = (True, False, False);
 
 # Mixed Typle
-tuple1 = ("abc", 34, True, 40, "male")
+tuple1 = ("abc", 34, True, 40, "male");
 
-# Create Tuple() constructor
-thistuple = tuple(("apple", "banana", "cherry"))
-
-thistuple = ("apple", "banana", "cherry", "orange", "kiwi", "melon", "mango")
-
-# Access Typle Items
-firstitem = thistuple[0];
-
-# Range of Indexes
-mytuple = thistuple[3:];
-mytuple = thistuple[:3];
-mytuple = thistuple[2:5];
-
-# Check if item Exists
-if 'banana' in thistuple:
-    print("Yes, 'banana' is in the fruits tuple");
+# Allow duplicates values
+thistuple = ("apple", "banana", "cherry", "apple", "cherry")
 
 
-# Update Tuples
-x = ("Apple", "Banana", "Cherry");
-y = list(x);
-y.append("Kiwi");
-x = tuple(y);
+# Check if Item Exists
+if "kiwi" in mytuple3:
+    print("Yes");
+else:
+    print("No")
 
-# Add Items in Tuples
-x = ("Apple", "Banana", "Cherry");
-y = list(x);
-y.append("Kiwi");
-x = tuple(y);
-
-# Add tuple to a tuple
-a = ("apple", "banana", "cherry")
-b = ("orange",);
-a+=b;
-print(a,b)
-
-
-# Remove Items in a Tuple
-t = ("apple", "banana", "cherry");
-l = list(t);
-l.remove("apple");
-t = tuple(l);
-
-# Delete Full Tuples
+# del keyword can delete the tuple completely
 thistuple = ("apple", "banana", "cherry")
 del thistuple
+print(thistuple) #this will raise an error because the tuple no longer exists
 
-# Using Asterisk* in Tuple
-fruits = ("apple", "banana", "cherry", "strawberry", "raspberry")
-(a,b,*c,) =  fruits;
-(a,*b,c,) =  fruits;
+
+# Change Tuple Values
+# Tuples are unchangeable, or immutable as it also is called.
+a = ("apple", "banana", "cherry")
+b = list(a);
+b[1] = 'kiwi';
+b.append('orange');
+a = tuple(b);
+
+# Remove Tuple
+# Tuples are unchangeable, so you cannot remove items from it, but you can use the same workaround as we used for changing and adding tuple items:
+thistuple = ("apple", "banana", "cherry")
+y = list(thistuple)
+y.remove("apple")
+thistuple = tuple(y)
+
+# Tuples Unpack
+# we normally assign values to it. This is called "packing" a tuple
+fruits = ("apple", "banana", "cherry");
+(a,b,c) = fruits;
+
+fruits2 = ("apple", "banana", "cherry", "orange", "kiwi");
+# * tuple convert a list and access all tuples items.
+(*a, b, c) = fruits2;
 
 # Loop Through a Tuple
-thistuple = ("apple", "banana", "cherry")
-for x in thistuple:
-  print(x)
+for i in range(len(fruits2)):
+    print(i, fruits2[i]);
 
-# Join Two Tuples
+# Join Tuples
 tuple1 = ("a", "b" , "c")
 tuple2 = (1, 2, 3)
-tuple3 = tuple1 + tuple2
-print(tuple3)
+tuple3 = tuple1 + tuple2;
 
 # Multiply Tuples
-tuple1 = ("a", "b" , "c")
-tuple2 = tuple1 * 2
-print(tuple2)
+fruits = ("apple", "banana", "cherry", "apple")
+mytuple = fruits * 2
 
-# Tuples Count() method
-thistuple = (1, 3, 5, 7, 8, 7, 5, 4, 6, 8, 5)
-x = thistuple.count(5)
-print(x)
+# Tuple Methods
+- count()
+- index()
 
-# Tuple index() method
-# TH eindex() method finds the first occurrence of the specified value.
-# The index() method raises an exception if the value is not found.
-thistuple = (1, 3, 7, 8, 7, 5, 4, 6, 8, 5)
-x = thistuple.index(8)
-print(x)
+# count() methods
+c = fruits.count("apple");
+print(c)
+# index() methods
+i = fruits.index("apple");
+print(i)
 ```
 
 ## Python Set
