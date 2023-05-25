@@ -1658,6 +1658,33 @@ x = zip(a,b);
 list1 = ["Joy", "Sumit", "Anis"];
 list2 = ["programmer", "CEO", "Teacher"];
 y = list(zip(list1, list2));
+
+
+rolls = [1,2,3,4,5,6,7,8,9,10];
+names = ['A', "B", "C", "D", "E", "F", "G", "H", "I", "J"];
+x = list(zip(rolls, names, "ABABABABAB"));
+print(x);
+```
+
+## Python xargs & xxargs
+```py
+# xargs
+def student (*info):
+    print(info[0], info[1], info[2])
+student(101, "Joy", True);
+
+def sum(*numbers):
+    sum = 0
+    for x in numbers:
+        sum += x;
+    print(sum);
+sum(10, 20, 30, 40, 50);
+sum(10, 50);
+
+# xxargs
+def person(**info):
+    print(info); #{'name': 'X', 'role': 'user', 'id': 101}
+person(name="X", role="user", id=101);
 ```
 
 ## Python Lambda and Recursion Function
@@ -1683,6 +1710,17 @@ x = myfunc(5);
 print(x())
 print(x(10))
 
+sum = lambda num1, num2 : num1 + num2;
+print(sum(10, 10));
+
+# myfunc recived cb as a function
+def myfunc(n, cb):
+    print(n, cb)
+    x = cb(n)
+    print(x)
+myfunc(50, lambda x : x *2);
+
+
 # Recursion
 def recursion(num):
     if (num > 0):
@@ -1692,6 +1730,40 @@ def recursion(num):
         result = 0;
     return result;
 x = recursion(6)
+```
+
+## Python Map & Filter Function
+```py
+- Python map() function
+# The map() function executes a specified function for each item in an iterable. The item is sent to the function as a parameter.
+
+# Syntax
+# map(function, iterables)
+
+mylist = [1,2,3,4,5];
+def square(x):
+    return x * x;
+
+result = list(map(square, mylist));
+print(result)
+
+def myfunc(n):
+  return len(n)
+x = tuple(map(myfunc, ('apple', 'banana', 'cherry')));
+print(x)
+
+
+- Python filter() Function
+ages = [5, 12, 17, 18, 24, 32];
+
+def myFunc (x):
+    if (x < 18):
+        return False;
+    else:
+        return True;
+
+result = list(filter(myFunc, ages));
+print(result);
 ```
 
 ## Python Class And Objects
@@ -2021,3 +2093,6 @@ except:
 finally:
   print("The 'try except' is finished")
 ```
+
+## Python Debugging
+- Debugging means the complete control over the program execution. Developers use debugging to overcome program from any bad issues. So debugging is a healthier process for the program and keeps the diseases bugs far away. Python also allows developers to debug the programs using pdb module that comes with standard Python by default. We just need to import pdb module in the Python script.
