@@ -2096,3 +2096,92 @@ finally:
 
 ## Python Debugging
 - Debugging means the complete control over the program execution. Developers use debugging to overcome program from any bad issues. So debugging is a healthier process for the program and keeps the diseases bugs far away. Python also allows developers to debug the programs using pdb module that comes with standard Python by default. We just need to import pdb module in the Python script.
+
+## Python File handling
+```py
+** Python File Open
+- File handling is an important part of any web application.
+- Python has several functions for creating, reading, updating, and deleting files.
+
+** File Handling
+- The key function for working with files in Python is the open() function.
+- The open() function takes two parameters; filename, and mode.
+- There are four different methods (modes) for opening a file
+
+** Four methods
+    - "r" Read
+    - "a" Append
+    - "w" Write
+    - "x" Create
+
+    - In addition you can specify if the file should be handled as binary or text mode
+        - "t" Text
+        - "b" Binary
+
+** Syntax
+f = open("demo.txt");
+f = open("demo.txt", "rt"); #Because "r" for read, and "t" for text are the default values, you do not need to specify them.
+```
+
+## Python File Read
+```py
+- To open the file, use the built-in open() function.
+- The open() function returns a file object, which has a read() method for reading the content of the file
+
+- read() method
+f = open("demo.txt", "r");
+print(f.read());
+print(f.read(5));
+
+- readline() method
+f = open("demo.txt", "r")
+# Read one line of the file
+# By calling readline() two times, you can read the two first lines
+print(f.readline());
+print(f.readline());
+
+# Print all line.
+f = open("demo.txt", "r")
+for x in f:
+  print(x)
+
+- It is a good practice to always close the file when you are done with it.
+f.close()
+```
+
+## Python File Write 
+```py
+** Python File Write
+- Write to an Existing File
+- To write to an existing file, you must add a parameter to the open() function
+    - "a" - Append  - will append to the end of the file
+    - "w" - Write - will overwrite any existing content
+
+- Create a New File
+    - "x" - Create - will create a file, returns an error if the file exist
+
+    - "a" - Append - will create a file if the specified file does not exist
+
+    - "w" - Write - will create a file if the specified file does not exist
+
+f = open("myfile.txt", "x")
+f = open("myfile.txt", "a")
+f = open("myfile.txt", "w")
+
+# create new file and write
+f = open("demo2.txt", "w");
+f.write("Create a new File and add this content.");
+print(f.writable()) # check readable check
+f.close();
+
+# append new text
+f = open("demo2.txt", "a");
+f.write(" Now the file add new content!");
+print(f.writable()) # check readable check
+f.close();
+
+f = open("demo2.txt", "r");
+print(f.readable()) # check readable check
+content = f.read();
+print(content);
+```
