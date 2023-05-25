@@ -2185,3 +2185,26 @@ print(f.readable()) # check readable check
 content = f.read();
 print(content);
 ```
+
+## Python File Delete
+```py
+
+** Python Delete File
+
+- Delete a File
+    - To delete a file, you must import the OS module, and run its os.remove() function
+
+# import os
+import os
+# remove file
+os.remove("myfile.txt")
+
+# Check if file Exist
+if os.path.exists("myfile.txt"):
+  os.remove("myfile.txt")
+else:
+  print("The file does not exist")
+
+# Delete Folder
+os.rmdir("folder")
+```
