@@ -1693,3 +1693,331 @@ def recursion(num):
     return result;
 x = recursion(6)
 ```
+
+## Python Class And Objects
+```py
+""" 
+** Python  Class And Objects
+- python is an object oriented programming language.
+- Almost everthing in Python is an object, with its properties and methods.
+- A class is like an object constructor, or a "Blueprint" for creating object.
+
+* Create a class
+- To create a class, use the keyword "class"
+- The __init__() function is called automatically every time the class is being used to create a new object.
+"""
+
+# Create a Class
+class Myclass:
+    x = 5;
+
+# Create object 
+p1 = Myclass();
+
+
+# The __init__() function is called automatically every time the class is being used to create a new object.
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+x = Person("John", 40);
+
+class Car:
+    def __init__(self, name, year, model):
+        self.name = name
+        self.year = year
+        self.model = model
+    def myfun(self):
+        print(f"{self.name} {self.year} {self.model} ")    
+car1 = Car("Frod", 2020, "Anything");
+car1.myfun()
+
+
+# Modify Object Properties
+car1.year = 2023;
+car1.myfun()
+
+# Delete Object Properties
+del car1.name;
+car1.myfun()
+
+# Delete Objects
+del car1
+
+# Pass Statement
+class Person:
+  pass
+```
+
+## Class Inheritance
+```py
+"""  
+** Python Inheritance
+- Inheritance allows us to define a class that inherits all the methods and properties from another class.
+- Parent class is the class being inherited from, also called base class.
+- Child class is the class that inherits from another class, also called derived class.
+"""
+
+# Create a Parent Class
+class Person:
+    def __init__(self, id, name, age):
+        self.id = id;
+        self.name = name;
+        self.age = age;
+    def printMe(self, other):
+        print(other, self.id, self.name, self.age);
+
+x = Person(101, "X", 25);
+
+
+# Create a Child Class
+class Student(Person):
+    role = "Student";
+
+s1 = Student(1005, "Anis", 17);
+s1.printMe("Hi");
+
+# Create another Child Class
+class Teacher(Person):
+    # Same Work
+    def __init__(self, id, name, age):
+        super().__init__(id, name, age)
+        self.role= "Teacher"
+
+t1 = Teacher(5022,'Sumit', 36);
+t1.printMe("Hi Sir")
+```
+
+## Python Iterators
+```py
+""" 
+** Python Iterators
+- An iterator is an object that contains a countable number of values.
+- An iterator is a object that can be iterated upen, meaning that your can traverse through all the values.
+
+# Iterator vs Iterable
+    - Iterator => পুনরাবৃত্তিকারী
+    - Iterable => পুনরাবৃত্তিযোগ্য
+"""
+
+mylist = ["A", "B", "C", "D", "E", "F"];
+x = iter(mylist);
+print(next(x));
+print(next(x));
+print(next(x));
+
+mylist2 = [1,2,3,4,5,6,7];
+it = iter(mylist2);
+a = it.__next__();
+b = it.__next__();
+c = it.__next__();
+d = it.__next__();
+print(a+b+c+d);
+
+# String Interable
+mystr = "banana"
+myit = iter(mystr)
+print(next(myit))
+print(next(myit))
+```
+
+## Python Scope
+```py
+""" 
+** Python Scope
+- A variable is only available from inside the region it is created. This is called scope.
+
+* Local Scope
+- A variable created inside a function belongs to the local scope of that function, and can only be used inside that function.
+
+* Function inside Function
+- As explained in the example above, the variable x is not available outside the function, but it is available for any function inside the function
+
+* Global Scope
+- A variable created in the main body of the Python code is a global variable and belongs to the global scope.
+Global variables are available from within any scope, global and local.
+
+* Global Keyword
+- use the global keyword if you want to make a change to a global variable inside a function.
+"""
+
+# Local Scope
+def myfunc():
+  x = 300
+  #This x acces only hare
+  print(x)
+
+# print(x); # "x" is not defined hare. 
+myfunc()
+
+
+# Function inside Function
+# - As explained in the example above, the variable x is not available outside the function, but it is available for any function inside the function
+def myfunc():
+  x = 300
+  def myinnerfunc():
+    print(x)
+  myinnerfunc()
+
+myfunc() 
+
+# Global Scope
+# A variable created in the main body of the Python code is a global variable and belongs to the global scope.
+# Global variables are available from within any scope, global and local.
+x = 300
+
+def myfunc():
+  print(x)
+
+myfunc()
+print(x)
+
+
+# Global Keyword
+# use the global keyword if you want to make a change to a global variable inside a function.
+x = 300
+def myfunc():
+  global x
+  x = 200
+myfunc()
+print(x)
+```
+
+## Python Date
+```py
+""" 
+** Python Date Time
+- A date in Python is not a data type of its own, but we can import a module named datetime to work with dates as date objects.
+"""
+
+# import datetime now.
+import datetime;
+x = datetime.datetime.now();
+print(x) # date date time now.
+print(x.year)
+print(x.strftime("%A"))
+print(x.strftime("%B"))
+
+
+** A referance of all the legal format codes
+- %a Weekday, short version 
+- %A Weekday, full version
+- %w Weekday as a number 0-6, 0 is Sunday
+- %d	Day of month 01-31
+- %b	Month name, short version
+- %B	Month name, full version
+- %m	Month as a number 01-12
+- %y	Year, short version, without century
+- %Y	Year, full version
+- %H	Hour 00-23		
+- %I	Hour 00-12		
+- %p	AM/PM	
+- %M	Minute 00-59		
+- %S	Second 00-59	
+- %f	Microsecond 000000-999999
+- %z	UTC offset	
+- %Z	Timezone	
+- %j	Day number of year 001-366
+- %U	Week number of year, Sunday as the first day of week, 00-53	
+- %W	Week number of year, Monday as the first day of week, 00-53	
+- %c	Local version of date and time
+- %C	Century	
+- %x	Local version of date	
+- %X	Local version of time
+
+```
+
+## Python RegEx
+```py
+""" 
+** Python RegEx
+- A RegEx, or Regular Expression, is a sequence of characters that forms a search pattern.
+- RegEx can be used to check if a string contains the specified search pattern.
+
+** RegEx Module
+- Python has a built-in package called re, which can be used to work with Regular Expressions.
+- Import the re module
+"""
+
+# Import the re module
+import re;
+
+** All RegEx Function
+- findall
+- search
+- split
+- sub
+
+
+- findall [a-m]
+text = "my name is joy.";
+pattern = "[a-m]";
+f = re.findall(pattern, text);
+print(f); #['m', 'a', 'm', 'e', 'i', 'j']
+
+- findall digit characters 
+txt = "That will be 59 dollars and 5k Tk"
+pattern = "\d"
+#Find all digit characters:
+x = re.findall(pattern, txt);
+print(x) #['5', '9', '5']
+
+- first characters find
+text = "my name is joy.";
+pattern = "^my";
+x = re.findall(pattern, text);
+print(x); #['my']
+
+- last characters find
+text = "Hello World";
+pattern = "World$";
+x = re.findall(pattern, text);
+print(x); #['World']
+
+- Either or
+txt = "The rain in Bangladesh falls mainly in the plain! Japan";
+pattern = "Spain|Japan|Bangladesh";
+x = re.findall(pattern, txt);
+print(x);
+```
+
+## Python Try Except
+```py
+** Python Try Except
+- The "try" block lets you test a block of code for errors.
+- The "except" block lets you handle the error.
+- The "else" block lets you execute code when there is no error.
+- The 'finally' block lets you execute code, regardless of the result of the try- and except blocks.
+
+# Exception Handling
+try:
+    print(x); # x is not defined
+except:
+    print("An exeption occurred");
+
+# Many Exceptions
+try:
+  print(x)
+except NameError:
+  print("Variable is not defined")
+except:
+  print("Something else went wrong")
+
+# Else keyword
+try:
+  print("Hello")
+  print(a)
+except:
+  print("Something went wrong")
+else:
+  print("Nothing went wrong")
+
+- The finally block, if specified, will be executed regardless if the try block raises an error or not.
+try:
+  print("H")
+except:
+  print("Something went wrong")
+finally:
+  print("The 'try except' is finished")
+```
