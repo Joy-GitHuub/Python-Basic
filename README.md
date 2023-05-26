@@ -765,13 +765,12 @@ print(programLanguage);
 print(len(programLanguage));
 
 # List Items
-"""
+
 - List items oar ordered, changeable, and allow duplicate values.
 - List items are indexed, the first item has index [0], the second item has index [1] ect.
 - Allow Duplicates
 - To determine how many items a list has, use the len() function:
 - <class 'list'>
-"""
 list1 = ["apple", "banana", "cherry"];
 list2 = [1, 5, 7, 9, 3];
 list3 = [True, False, False];
