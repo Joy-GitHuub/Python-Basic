@@ -2056,42 +2056,65 @@ print(x);
 
 ## Python Try Except
 ```py
+** Python Error Handle
+    - Runtime error / incorrect Input / Incorrect code
+
 ** Python Try Except
-- The "try" block lets you test a block of code for errors.
-- The "except" block lets you handle the error.
-- The "else" block lets you execute code when there is no error.
-- The 'finally' block lets you execute code, regardless of the result of the try- and except blocks.
+- The try block lets you test a block of code for errors.
+- The except block lets you handle the error.
+- The else block lets you execute code when there is no error.
+- The finally block lets you execute code, regardless of the result of the try- and except blocks.
 
-# Exception Handling
-try:
-    print(x); # x is not defined
-except:
-    print("An exeption occurred");
-
-# Many Exceptions
 try:
   print(x)
-except NameError:
-  print("Variable is not defined")
+except Exception as e:
+  print(e) # name 'x' is not defined
+
+# Error Handle Exceptions
+try:
+    x = input("Enter a Number : ");
+    result = 20 / x;
+    print(result);
+except Exception as e:
+  print(e)
+
+# Many Exceptions Error handle
+try:
+    print(x);
+except NameError as e:
+    print(e);
 except:
   print("Something else went wrong")
 
-# Else keyword
+# Else keyword to define a block of code to be executed if no errors were raised
 try:
-  print("Hello")
-  print(a)
+  print('x')
 except:
   print("Something went wrong")
 else:
   print("Nothing went wrong")
 
-- The finally block, if specified, will be executed regardless if the try block raises an error or not.
+# The finally block, if specified, will be executed regardless if the try block raises an error or not.
 try:
-  print("H")
+  print(x)
 except:
   print("Something went wrong")
 finally:
   print("The 'try except' is finished")
+
+# Error raise
+x = int(input("Enter Your Number : "));
+
+try:
+    if (type(x) == str):
+        raise Exception("You Input is not a number")
+    elif (type(x) != int):
+        raise Exception("Sorry this number is not int")
+    else:
+        print(x)
+except Exception as error:
+    print(error)
+
 ```
 
 ## Python Debugging
