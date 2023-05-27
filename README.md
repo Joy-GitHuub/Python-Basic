@@ -1946,6 +1946,99 @@ x.display2();
 x.display3();
 ```
 
+## OOP common features
+```py
+** Class Object Programming
+    - Class,
+    - Object,
+    - Inheritance,
+    - Abstraction,
+    - Encapsulation,
+    - Polymorphism,
+```
+
+## Python Abstraction
+```py
+""" 
+** What is Abstraction in Python?
+=> Abstraction in python id defined as a process of handling complexity by hiding unnecessary information from the user.
+
+** Why use abstract base class
+=> By defining an abstract base class, you can define a common Application Program Interface(API) for a set of subclasses. This capability is especially useful in situations where a third-party is going to provide implementations, such as with plugins, but can also help you when working in a large team or with a large code-base where keeping all classes in your mind is difficult or not possible. 
+
+"""
+from abc import ABC, abstractmethod;
+
+class Parent(ABC):
+    @abstractmethod
+    def __init__(self, name, id):
+        self.name = name;
+        self.id = id;
+    def display(self):
+        pass;
+
+class Child(Parent):
+    def __init__(self, name, id):
+        super().__init__(name, id);
+    def display(self):
+        print(self.name, self.id);
+
+x = Child("X", 101);
+x.display()
+print(x);
+```
+
+## Python Polymorphism
+```py
+""" 
+** What is Polymorphism
+=> The word polymorphism means having many forms. In programming polymorphism means the same function name being used for different types. The key difference is the data types and number of arguments used in function
+
+"""
+
+# Python program to demonstrate in-built poly-
+# morphic functions
+ 
+# len() being used for a string
+print(len("geeks"))
+ 
+# len() being used for a list
+print(len([10, 20, 30]))
+
+# A simple Python function to demonstrate
+# Polymorphism
+
+def add(x,y, z=0):
+    return x + y + z;
+
+print(add(2, 3))
+print(add(2, 3, 4));
+
+# Polymorphism in Class
+class Ban():
+    def capital(self):
+        print("Dhaka is the capital of Bangladesh");
+    def language(self):
+        print("Bangla is the spoken language of Bangladesh");
+    def type(self):
+        print("Bangladesh is a developing country");
+
+class USA():
+    def capital(self):
+        print("Washington, D.C. is the capital of USA.")
+    def language(self):
+        print("English is the primary language of USA.")
+    def type(self):
+        print("USA is a developed country.")
+
+obj1 = Ban();
+obj2 = USA();
+for country in (obj1, obj2):
+    country.capital();
+    country.language();
+    country.type();
+```
+
 ## Python Iterators
 ```py
 """ 
@@ -2314,4 +2407,21 @@ else:
 
 # Delete Folder
 os.rmdir("folder")
+```
+
+## Python Own Module
+```py
+# myMath.py file
+def add(a, b):
+    return a + b;
+
+def sub(a, b):
+    return a - b;
+
+# demo.py file
+import myMath;
+a =  myMath.add(10, 5);
+print(a);
+b = myMath.sub(10, 5);
+print(b);
 ```
