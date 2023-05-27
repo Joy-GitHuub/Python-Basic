@@ -272,6 +272,13 @@ print(bool(""))
 print(bool(()))
 print(bool([]))
 print(bool({}))
+
+# Variable type checking method 
+isinstance(200, int); # True
+x = {"name": "x"}
+print(isinstance(x, dict))
+x = [2, 3, 4, 5]
+print(isinstance(x, list))
 ```
 
 ## Binary Types
