@@ -1785,6 +1785,8 @@ class Myclass:
 # Create object 
 p1 = Myclass();
 
+# p1 ki My Class ar object kina check
+print(isinstance(p1, Myclass)) # True
 
 # The __init__() function is called automatically every time the class is being used to create a new object.
 class Person:
@@ -1858,6 +1860,90 @@ class Teacher(Person):
 
 t1 = Teacher(5022,'Sumit', 36);
 t1.printMe("Hi Sir")
+```
+
+## Types Of Inheritance
+```py
+"""
+** All Type of Inheritance
+    - Multi-Lavel inheritance
+    - Hierarchical inheritance
+    - Multiple inheritance
+
+* Hierarchical Inheritance
+    - Shape
+        - Triangle 
+        - Rectangle
+* Multi-Level Inheritance
+    - a => b => c => d
+* Multiple Inheritance
+    - A 
+        - B
+            - D
+        - C
+            -D
+"""
+# Hierarchical Inheritance
+class Shape:
+    def __init__(self, dim1, dim2):
+        self.dim1 = dim1;
+        self.dim2 = dim2;
+    def area(self):
+       pass;
+
+class Triangle(Shape):
+    def __init__(self, dim1, dim2):
+        super().__init__(dim1, dim2)
+    def area(self):
+        area = 0.5 * self.dim1 * self.dim2;
+        print("Area of Triangle",area);
+
+
+class Rectangle(Shape):
+    def __init__(self, dim1, dim2):
+        super().__init__(dim1, dim2);
+    def area(self):
+        area = self.dim1 * self.dim2;
+        print("Area of Rectangle", area);
+
+t1 = Triangle(10, 20);
+t1.area();
+
+r1 = Rectangle(10, 20);
+r1.area();
+
+# Multi-Level Inheritance
+class A:
+    def display1(self):
+        print("I am inside A Class");
+class B(A):
+    def display2(self):
+        print("I am inside B Class");
+
+class C(B):
+    def display3(self):
+        print("I am inside C Class");
+x = C();
+x.display1()
+x.display2()
+x.display3()
+
+# Multiple Inheritance
+class A:
+    def display1(self):
+        print("I am inside A Class");
+class B:
+    def display2(self):
+        print("I am inside B Class");
+
+class C(A,B):
+    def display3(self):
+        print("I am inside C Class");
+
+x = C();
+x.display1();
+x.display2();
+x.display3();
 ```
 
 ## Python Iterators
@@ -2210,7 +2296,6 @@ print(content);
 
 ## Python File Delete
 ```py
-
 ** Python Delete File
 
 - Delete a File
