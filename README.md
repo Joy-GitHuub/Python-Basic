@@ -198,6 +198,12 @@ slices = string[3:];
 print(slices)
 
 
+x = "bangladesh!";
+# 0, start, 4 end point, 2 skip
+print(x[0:4:2]) # bn
+print(x[0::2]); # bnlds!
+
+
 # String - Modify Case 
 
 # - String Case
@@ -737,6 +743,21 @@ for x in color:
     print(x)
     for y in fruits:
         print(x, y);
+
+# list reverse with out reverse() method use.
+adj = ["red", "big", "tasty"];
+rev = [];
+i = len(adj) -1;
+while i >= 0:
+    rev.append(adj[i])
+    i -= 1;
+
+rev2 = [];
+for x in range(len(adj)-1, -1, -1):
+    rev2.append(adj[x])
+
+print(rev2);
+print(rev);
 ```
 
 
