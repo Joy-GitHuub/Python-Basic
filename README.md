@@ -12,6 +12,10 @@ Ans:- Python is used in everything from machine learning to building websites an
 4. Python for Multi-purpose usage?
 Ans:- a.{Webapp development} b.{Quick prototyping} c.{Scripting} d.{Data science} e.{Databse programming}
 
+
+# Python PDF
+PDF Link   [Python-PDF](https://drive.google.com/file/d/1pzfDQnIKnqtAEAL-juK2YfQO7BC9MLoe/view?fbclid=IwAR0iP5KaazI58wIdUiS0V6mg09N7bhQktYyDIkp6rRGdFbEODJ_8TyaUa-Y).
+
 ## Python Print
 ```py
 1. print("Hello Python World");
@@ -240,6 +244,41 @@ print(f"This is my super number num1 + num2 = {num1 + num2}");
 
 userName = "Joy";
 print(f"My name is {userName}");
+```
+
+## String Methods
+```py
+story = "Once upon a time there was a youtuber Sumit Data who uploaded JavaScript course";
+
+# String Function
+print(len(story));
+print(story.startswith("Once"));
+print(story.endswith("course"));
+print(story.count("a"));
+print(story.find("upon"));
+print(story.replace("JavaScript", "Node.JS"));
+
+# escape sequences
+story2 = "XY is good.\n\tHe is very good";
+print(story2);
+
+# String Problem
+# 1
+name = input("Enter Your Name:\n ");
+print("Good Afternon, {}".format(name));
+
+# 2
+letter = '''Dear <|Name|>,
+  Greetings from ABC codding hourse. I am happy to tell you about your selection
+You are Selected!
+Thanks and regards,
+Date: <|DATE|>
+''';
+name = input("Enter Your Name : ");
+date = input("Enter Your Date : ");
+letter = letter.replace("<|Name|>", name);
+letter = letter.replace("<|DATE|>", date);
+print(letter);
 ```
 
 ## Python Booleans
@@ -1179,6 +1218,11 @@ thisdict = {
 #  Access Dictionary
 year = thisdict["year"];
 colors = thisdict.get("colors");
+
+# Deffirence between 
+year = thisdict["year"]; # Throws an error as year is not present in the dictionary
+colors = thisdict.get("colors"); # Retruns Non as colors is not present in the dictionary.
+
 
 # The keys() method will return a list of all the keys in the dictionary.
 keys = thisdict.keys();
